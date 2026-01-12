@@ -14,7 +14,6 @@ print(choose)
 
 # Loops
 scores = [78, 85, 92, 88, 76, 95, 89]
-high=max(scores)
-
 for score in scores:
-    print(high)
+    print(score)
+    print(score + 20)
