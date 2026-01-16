@@ -18,3 +18,23 @@ for num in range(1,11):
     print(f"{multiply_num}*{num}={multiply_num*num}")
 
 #
+multiply_num=int(input("enter which multiplication table would u like to see?"))
+
+for num in range(1,11):
+    print(f"{multiply_num}*{num}={multiply_num*num}")
+
+
+
+
+multiply_num=int(input("enter which multiplication table would u like to see?"))
+
+for num in range(1,11):
+    print(f"{multiply_num}*{num}={multiply_num*num}")
+
+
+
+
+multiply_num=int(input("enter which multiplication table would u like to see?"))
+
+for num in range(1,11):
+    print(f"{multiply_num}*{num}={multiply_num*num}")
