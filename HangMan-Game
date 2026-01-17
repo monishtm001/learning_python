@@ -1,0 +1,38 @@
+words = [ "apple", "banana", "orange", "grape", "mango",
+    "python", "coding", "program", "developer", "computer",
+    "island", "treasure", "pirate", "adventure", "escape",
+    "river", "mountain", "forest", "desert", "ocean",
+    "school", "college", "student", "teacher", "exam",
+    "music", "guitar", "piano", "drums", "song",
+    "cricket", "football", "tennis", "chess", "game",
+    "robot", "engineer", "science", "machine", "future"]
+import random
+Wordd=random.choice(words)
+print("Generating a Random word: " + Wordd)
+Blanks=len(Wordd)
+placeholder=""
+for dash in range(Blanks):
+    placeholder+="_"
+print(placeholder)
+
+Game_over = False
+loist = []
+while not Game_over:
+    guess = input("Enter a Random Letter:").lower()
+    display=""
+    for let in Wordd:
+        if guess==let:
+            display+=let
+            loist.append(let)
+        elif let in loist:
+            display+=let
+        else:
+            display+= "_"
+
+    if "_" not in display:
+         Game_over = True
+         print("You Win.")
+
+    print(display)
+
+   
