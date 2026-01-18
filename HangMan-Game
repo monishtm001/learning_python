@@ -7,6 +7,7 @@ words = [ "apple", "banana", "orange", "grape", "mango",
     "cricket", "football", "tennis", "chess", "game",
     "robot", "engineer", "science", "machine", "future"]
 import random
+life =6
 generated_word=random.choice(words)
 print("Generating a Random word: " + generated_word)
 length_of_word=len(generated_word)
@@ -34,5 +35,11 @@ while not Game_over:
          print("You Win.")
 
     print(display)
+
+if guessed_word not in generated_word:
+    life-=1
+    if life == 0:
+         Game_over=True
+         print("You loose")
 
    
