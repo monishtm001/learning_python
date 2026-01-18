@@ -7,24 +7,24 @@ words = [ "apple", "banana", "orange", "grape", "mango",
     "cricket", "football", "tennis", "chess", "game",
     "robot", "engineer", "science", "machine", "future"]
 import random
-Wordd=random.choice(words)
-print("Generating a Random word: " + Wordd)
-Blanks=len(Wordd)
-placeholder=""
-for dash in range(Blanks):
-    placeholder+="_"
-print(placeholder)
+generated_word=random.choice(words)
+print("Generating a Random word: " + generated_word)
+length_of_word=len(generated_word)
+dash_placeholder=""
+for dash in range(length_of_word):
+    dash_placeholder+="_"
+print(dash_placeholder)
 
 Game_over = False
-loist = []
+empty_list = []
 while not Game_over:
-    guess = input("Enter a Random Letter:").lower()
+    guessed_word = input("Enter a Random Letter:").lower()
     display=""
-    for let in Wordd:
-        if guess==let:
+    for let in generated_word:
+        if guessed_word==let:
             display+=let
-            loist.append(let)
-        elif let in loist:
+            empty_list.append(let)
+        elif let in empty_list:
             display+=let
         else:
             display+= "_"
