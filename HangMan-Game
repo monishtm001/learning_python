@@ -36,10 +36,10 @@ while not Game_over:
 
     print(display)
 
-    if guessed_word not in generated_word:
-        life-=1
-        if life == 0:
-             Game_over=True
-             print("You loose")
+if guessed_word not in generated_word:
+    life-=1
+    if life == 0:
+         Game_over=True
+         print("You loose")
 
    
