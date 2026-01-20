@@ -12,5 +12,17 @@ anime_name["Num_3456"]=["ReZero","Haikyuu","Promised Never Land"]
 
 print(anime_name["Num_3456"])
 
-anime_name={}
-print(anime_name) 
+
+
+anime_watched={
+    "One_Piece":{
+    "Charecters":["Zoro","Luffy","Name","Robin"],
+    "num_times_watched":1,
+    },
+    "Haikyuu":{
+    "Charecters":["Hinata","Kageyama","Oikawa","Miya Twins"],
+    "Num_times_wateched":100
+    }
+}
+
+print(anime_watched["Haikyuu"]["Charecters"][2])
