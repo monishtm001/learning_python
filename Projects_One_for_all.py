@@ -62,17 +62,24 @@ print(str_of_list)
 LIFES=6
 
 
-while "_" in Display_let_in_list:
+while "_" in Display_let_in_list and LIFES> 0:
     ask_let=input("Enter a Random Letter").lower()
+    found=False
     for i in range(len_word):
         if ran_word[i]==ask_let:
             Display_let_in_list[i]=ask_let
-            str_of_list=" ".join(Display_let_in_list)
-            print(str_of_list)
-        else:
-            print(str_of_list)
-
-
+            found=True
+    if not found:
+        LIFES-=1
+        print(f"Wrong Guess: {LIFES} left ")
+    if LIFES == 0:
+        print(f"GAME OVER, The Word was = {ran_word} ")
+        break
+    str_of_list=" ".join(Display_let_in_list)
+    print(str_of_list)
+if "_" not in Display_let_in_list:
+    print("Congragulations You Won")
+    
             
 
 
