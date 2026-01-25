@@ -36,56 +36,90 @@ import random
 
 ## Hang Man Game
 
-words = [
-    "python", "coding", "developer", "programming", "computer",
-    "keyboard", "internet", "software", "hardware", "network",
-    "hangman", "password", "security", "encryption", "hacker",
-    "treasure", "island", "pirate", "adventure", "mystery",
-    "machine", "learning", "artificial", "intelligence", "robot",
-    "science", "engineer", "technology", "future", "innovation",
-    "school", "college", "student", "teacher", "education",
-    "football", "cricket", "basketball", "tennis", "chess",
-    "music", "guitar", "piano", "drums", "concert",
-    "mountain", "river", "forest", "desert", "ocean",
-    "travel", "journey", "explore", "discovery", "freedom",
-    "friendship", "family", "happiness", "success", "dream",
-    "camera", "mobile", "laptop", "tablet", "device",
-    "history", "culture", "language", "literature", "art"
-]
+# words = [
+#     "python", "coding", "developer", "programming", "computer",
+#     "keyboard", "internet", "software", "hardware", "network",
+#     "hangman", "password", "security", "encryption", "hacker",
+#     "treasure", "island", "pirate", "adventure", "mystery",
+#     "machine", "learning", "artificial", "intelligence", "robot",
+#     "science", "engineer", "technology", "future", "innovation",
+#     "school", "college", "student", "teacher", "education",
+#     "football", "cricket", "basketball", "tennis", "chess",
+#     "music", "guitar", "piano", "drums", "concert",
+#     "mountain", "river", "forest", "desert", "ocean",
+#     "travel", "journey", "explore", "discovery", "freedom",
+#     "friendship", "family", "happiness", "success", "dream",
+#     "camera", "mobile", "laptop", "tablet", "device",
+#     "history", "culture", "language", "literature", "art"
+# ]
 
-ran_word=random.choice(words)
-len_word=len(ran_word)
-print(f"Your pick of the day word has {ran_word} letters")
-Display_let_in_list=["_"]*len_word
-str_of_list=" ".join(Display_let_in_list)
-print(str_of_list)
-LIFES=6
+# ran_word=random.choice(words)
+# len_word=len(ran_word)
+# print(f"Your pick of the day word has {ran_word} letters")
+# Display_let_in_list=["_"]*len_word
+# str_of_list=" ".join(Display_let_in_list)
+# print(str_of_list)
+# LIFES=6
 
 
-while "_" in Display_let_in_list and LIFES> 0:
-    ask_let=input("Enter a Random Letter").lower()
-    found=False
-    for i in range(len_word):
-        if ran_word[i]==ask_let:
-            Display_let_in_list[i]=ask_let
-            found=True
-    if not found:
-        LIFES-=1
-        print(f"Wrong Guess: {LIFES} left ")
-    if LIFES == 0:
-        print(f"GAME OVER, The Word was = {ran_word} ")
-        break
-    str_of_list=" ".join(Display_let_in_list)
-    print(str_of_list)
-if "_" not in Display_let_in_list:
-    print("Congragulations You Won")
+# while "_" in Display_let_in_list and LIFES> 0:
+#     ask_let=input("Enter a Random Letter").lower()
+#     found=False
+#     for i in range(len_word):
+#         if ran_word[i]==ask_let:
+#             Display_let_in_list[i]=ask_let
+#             found=True
+#     if not found:
+#         LIFES-=1
+#         print(f"Wrong Guess: {LIFES} left ")
+#     if LIFES == 0:
+#         print(f"GAME OVER, The Word was = {ran_word} ")
+#         break
+#     str_of_list=" ".join(Display_let_in_list)
+#     print(str_of_list)
+# if "_" not in Display_let_in_list:
+#     print("Congragulations You Won")
     
             
+## Calculator
 
 
+def add(a,b):
+    return a+b
 
+def sub(a,b):
+    return a-b
 
+def mul(a,b):
+    return a*b
 
+def div(a,b):
+    return a/b
 
+operations={"+":add,
+            "-":sub,
+            "*":mul,
+            "/":div,
+            }
+f_num=int(input("Enter First Number:"))
+
+Repeat=True
+
+while Repeat is True:
+    for op in operations:
+        print(op)
+    Ops=input("Select the operation u want to perform:")
+    l_num=int(input("Enter last Number:"))
+    answer=operations[Ops](a=f_num,b=l_num)
+    print(answer)
+
+    choice=input("Would u like to continue with the above Answer? Type Y for Above Aa=nswer or N for new operation:").lower()
+
+    if choice=="y":
+        f_num=answer
+    elif choice=="n":
+        f_num=int(input("\nEnter New First Number: "))
+    else:
+        always=False
 
         

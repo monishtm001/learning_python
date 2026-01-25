@@ -40,10 +40,12 @@ while always==True:
     answer=operations[opss](a=num_a,b=num_b)
     print(f"{num_a} {opss} {num_b} = {answer}")        
 
-    choice=print(input("Enter Y to continue with the op else type N to continue with new calculation:"))
+    choice=input("Enter Y to continue with the op else type N to continue with new calculation:")
 
-    if choice=="Y":
+    if choice=="y":
         num_a=answer
+    elif choice=="n":
+        num_a=int(input("\nEnter New First Number: "))
     else:
         always=False
 
