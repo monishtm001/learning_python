@@ -89,33 +89,84 @@ for card in Dealer:
 print(f"player total={total}")
 
 
-choice=input("Choose your Hand : HIT/STAND:").lower()
-print(choice)
+# choice=input("Choose your Hand : HIT/STAND:").lower()
+# print(choice)
 
-if choice=="stand":
-    if sum>total and sum<21:
-        print(f"{PLAYER_NAME} Has Won the Game")
-    elif total>sum and total<21:
-        print("Dealer has Won the Game")
-elif choice=="hit":
-    Player.append(random.choice(deck))
-    print("\nPLAYER CARDS:")
-    sum=0
-    for card in Player:
-        print()
-        for line in card["ascii"]:
-            print(line)
-        sum+=card["value"]
-    print(f"player total={sum}")
-    Dealer.append(random.choice(deck))
-    print("\nPLAYER CARDS:")
-    total=0
-    for card in Dealer:
+# if choice=="stand":
+#     if sum>total and sum<21:
+#         print(f"{PLAYER_NAME} Has Won the Game")
+#     elif total>sum and total<21:
+#         print("Dealer has Won the Game")
+# elif choice=="hit":
+#     Player.append(random.choice(deck))
+#     print("\nPLAYER CARDS:")
+#     sum=0
+#     for card in Player:
+#         print()
+#         for line in card["ascii"]:
+#             print(line)
+#         sum+=card["value"]
+#     print(f"player total={sum}")
+#     Dealer.append(random.choice(deck))
+#     print("\nPLAYER CARDS:")
+#     total=0
+#     for card in Dealer:
+#             print()
+#             for line in card["ascii"]:
+#                 print(line)
+#             total+=card["value"]
+#     print(f"player total={total}")
+
+Game_Continues=True
+while Game_Continues:
+    choice=input("Choose your Hand : HIT/STAND:").lower()
+    print(choice)
+
+    if choice=="stand":
+        if sum>total and sum<=21:
+            print(f"{PLAYER_NAME} Has Won the Game")
+        elif total>sum and total<=21:
+            print("Dealer has Won the Game")
+        else:
+            print("It is a Draw")
+        Game_Continues=False
+    elif choice=="hit":
+        Player.append(random.choice(deck))
+        print("\nPLAYER CARDS:")
+        sum=0
+        for card in Player:
             print()
             for line in card["ascii"]:
                 print(line)
-            total+=card["value"]
-    print(f"player total={total}")
+            sum+=card["value"]
+        print(f"player total={sum}")
+        if sum>21:
+            print("Game Over : Dealer Wins")
+            break
+        
+        Dealer.append(random.choice(deck))
+        print("\nDealer Cards:")
+        total=0
+        for card in Dealer:
+                print()
+                for line in card["ascii"]:
+                    print(line)
+                total+=card["value"]
+        print(f"Dealer Total:")
+        if total>21:
+            print("Game Over : Player Wins")
+            break
+        if sum>total:
+            print("Player Wins")
+            Game_Continues=False
+        elif total>sum:
+            print("Dealer Wins")
+            Game_Continues=False
+       
+    
+
+
+
 
 
 
