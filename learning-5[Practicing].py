@@ -109,3 +109,14 @@ students = [
 ]
 for student in students:
     print(student["name"], ":", student["total_marks"])
+monish_index = None
+
+for index, student in enumerate(students):
+    if student["name"] == "Monish":
+        monish_index = index
+
+print(monish_index)
+
+
+monish_index = next(i for i, s in enumerate(students) if s["name"] == "Monish")
+print(monish_index)
