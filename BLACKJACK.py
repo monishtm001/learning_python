@@ -80,7 +80,8 @@ print(f"player total={sum}")
 
 Dealer = random.sample(deck, 2)
 total=0
-print("\nDEALER CARDS:")
+new_var = print("\nDEALER CARDS:")
+new_var
 for card in Dealer:
     print()
     for line in card["ascii"]:
